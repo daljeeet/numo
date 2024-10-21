@@ -19,25 +19,19 @@ export function ScoreDialogContent({
 	data: FormDataa;
 }) {
 	const [score, setScore] = useState(0);
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		const stepOne = checkMulankCompatibility(data.her_dob, data.his_dob);
 		setScore((val) => val + stepOne);
-		console.log({ stepOne });
 		const stepTwo = atleastOneNumberisShared(data.her_dob, data.his_dob);
 		setScore((val) => val + stepTwo);
-		console.log({ stepTwo });
-		const stepThree = isRowOrColumnCompletingAfterSharing(
-			data.her_name,
-			data.his_name,
-		);
-		console.log({ stepThree, score });
+		const stepThree = 20;
 		setScore((val) => val + stepThree);
-		const stepFour = shouldShareNumbers(data.her_dob, data.his_dob);
+		const stepFour = 20;
 		setScore((val) => val + stepFour);
-		console.log({ stepFour });
-		const stepFive = isFiveOrSixShared(data.her_name, data.his_name);
+		const stepFive = 20;
 		setScore((val) => val + stepFive);
-		console.log({ stepFive });
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const checkMulankCompatibility = (dob1: string, dob2: string) => {
@@ -172,15 +166,6 @@ export function ScoreDialogContent({
 		}
 		return false;
 	}
-	const isRowOrColumnCompletingAfterSharing = (dob1: string, dob2: string) => {
-		return 20;
-	};
-	const shouldShareNumbers = (dob1: string, dob2: string) => {
-		return 20;
-	};
-	const isFiveOrSixShared = (dob1: string, dob2: string) => {
-		return 20;
-	};
 	return (
 		<Dialog open={show} onOpenChange={setShow}>
 			<DialogContent className="sm:max-w-[425px]">
