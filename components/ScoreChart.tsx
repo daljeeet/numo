@@ -15,10 +15,10 @@ export const description = "A radial chart with text";
 
 export function ScoreChart({ score }: { score: number }) {
 	const getColor = (score: number) => {
-		if (score >= 80) {
+		if (score >= 90) {
 			return "green";
 		}
-		if (score >= 60) {
+		if (score >= 80) {
 			return "yellow";
 		}
 		if (score >= 40) {
