@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import Logo from "./assets/logo1.svg";
-import Banner from "./assets/banner-bg.png";
+import Logo from "@/assets/logo1.svg";
+import Banner from "@/assets/banner-bg.png";
 import { Button } from "@/components/ui/button";
-import FooterImg from "./assets/footer.png";
-import HoroscopeImg from "./assets/horoscrpe.png";
-import AstroImg from "./assets/astro.png";
+import FooterImg from "@/assets/footer.png";
+import HoroscopeImg from "@/assets/horoscrpe.png";
+import AstroImg from "@/assets/astro.png";
 import { useRouter } from "next/navigation";
 export default function Home() {
 	const navigate = useRouter();
