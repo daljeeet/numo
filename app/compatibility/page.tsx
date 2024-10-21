@@ -17,8 +17,10 @@ const Compatibility = () => {
 	const { register, handleSubmit, reset } = useForm<FormDataa>();
 	const [show, setShow] = useState(false);
 	const [data, setData] = useState<FormDataa | null>(null);
+	const [buttonMsg, setButtonMsg] = useState("Submit");
 
 	const onsubmit = async (data: FormDataa) => {
+		setButtonMsg("Calculating....");
 		try {
 			const response = await fetch("https://numrologyproject.glitch.me/users", {
 				method: "POST",
@@ -29,6 +31,8 @@ const Compatibility = () => {
 			});
 			if (response.ok) {
 				setData(data);
+				setShow(true);
+				setButtonMsg("Submit");
 				reset();
 			}
 		} catch (error) {
@@ -93,8 +97,8 @@ const Compatibility = () => {
 							</div>
 
 							<div>
-								<Button className="w-full" onClick={() => setShow(true)}>
-									Submit
+								<Button type="submit" className="w-full">
+									{buttonMsg}
 								</Button>
 							</div>
 						</form>

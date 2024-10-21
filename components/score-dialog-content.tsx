@@ -39,13 +39,14 @@ export function ScoreDialogContent({
 		const mulankTwo = dob2.slice(-2);
 		const mul1 = mulankOne.split("")[0] + mulankOne.split("")[1];
 		const mul2 = mulankTwo.split("")[0] + mulankTwo.split("")[1];
-		if (isFrendly(mul1, mul2)) {
+		const one = Number(mul1.split("")[0]) + Number(mul1.split("")[1]);
+		const two = Number(mul2.split("")[0]) + Number(mul2.split("")[1]);
+		if (isFrendly(one.toString(), two.toString())) {
 			return 19;
 		}
 		return 1;
 	};
 	const isFrendly = (mulankOne: string, mulankTwo: string) => {
-		let frandly = false;
 		switch (mulankOne) {
 			case "1":
 				if (
@@ -56,7 +57,7 @@ export function ScoreDialogContent({
 					mulankTwo === "6" ||
 					mulankTwo === "9"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "2":
@@ -66,7 +67,7 @@ export function ScoreDialogContent({
 					mulankTwo === "3" ||
 					mulankTwo === "5"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "3":
@@ -77,7 +78,7 @@ export function ScoreDialogContent({
 					mulankTwo === "5" ||
 					mulankTwo === "7"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "4":
@@ -88,7 +89,7 @@ export function ScoreDialogContent({
 					mulankTwo === "6" ||
 					mulankTwo === "8"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "5":
@@ -98,7 +99,7 @@ export function ScoreDialogContent({
 					mulankTwo === "3" ||
 					mulankTwo === "6"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "6":
@@ -108,7 +109,7 @@ export function ScoreDialogContent({
 					mulankTwo === "5" ||
 					mulankTwo === "6"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "7":
@@ -119,7 +120,7 @@ export function ScoreDialogContent({
 					mulankTwo === "6" ||
 					mulankTwo === "4"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "8":
@@ -130,18 +131,17 @@ export function ScoreDialogContent({
 					mulankTwo === "6" ||
 					mulankTwo === "4"
 				) {
-					frandly = true;
+					return true;
 				}
 				break;
 			case "9":
 				if (mulankTwo === "1" || mulankTwo === "3" || mulankTwo === "5") {
-					frandly = true;
+					return true;
 				}
 				break;
 			default:
-				break;
+				return false;
 		}
-		return frandly;
 	};
 	const atleastOneNumberisShared = (dob1: string, dob2: string) => {
 		const arr1 = dob1.split("-").join("").split("");
