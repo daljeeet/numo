@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Banner from "../assets/banner-bg.png";
-import Logo from "../assets/logo1.svg";
+import Banner from "@/assets/banner-bg.png";
+import Logo from "@/assets/logo1.svg";
 
 export interface FormDataa {
 	his_name: string;
